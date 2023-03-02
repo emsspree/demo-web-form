@@ -1,0 +1,237 @@
+/**
+ * Drei-Quiz-Fragen
+ * von Andre Trecksel
+ */
+
+ *, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  --color-paper: beige;
+  --color-text: black;
+  --color-korrekt: limegreen;
+  --color-inkorrekt: crimson;
+}
+
+html, body, input, button {
+  font-family: system-ui, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  color: var(--color-text, black);
+  background-color: var(--color-paper, beige);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  user-select: none;
+  justify-content: center;
+}
+
+header, main, footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 32rem;
+}
+
+body>footer {
+  /* fürs Debuggen */
+  position: absolute;
+  bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, form {
+  display: block;
+  margin: 0 auto;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+}
+
+h1{
+  line-height: 2rem;
+  font-size: 2rem;
+}
+
+h1::before {
+  content: url(../img/form.32.png);
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  margin-inline-end: 0.5ch;
+  outline: 1px solid var(--color-paper);
+  outline-offset: -3px;
+  mix-blend-mode: luminosity;
+}
+
+h2 {
+  line-height: 2;
+}
+
+p.richtig, p.falsch {
+  text-shadow: 1px 1px 0px black;
+}
+
+p.richtig {
+  /* color: limegreen; */
+  /* color: var(--color-korrekt, limegreen); */
+  color: var(--color-korrekt, limegreen);
+}
+
+p.falsch {
+  /* color: limegreen; */
+  /* color: var(--color-korrekt, limegreen); */
+  color: var(--color-inkorrekt, crimson);
+}
+
+div.forms {
+  display: flex;
+  position: relative;
+  height: 19.2rem;
+  /* background-color: blue; */
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* div.forms > p:last-child {
+} */
+
+form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 1;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  padding-bottom: 0.75rem;
+  background-color: bisque;
+  /* transition: all 1s; */
+}
+
+form:nth-of-type(1) {
+  z-index: 3;
+}
+
+form:nth-of-type(2) {
+  z-index: 2;
+}
+
+form:nth-of-type(3) {
+  z-index: 1;
+}
+
+form.fertig {
+  transition: all 1s;
+  left: -120vw;
+  opacity: 0;
+}
+
+fieldset {
+  border-radius: 5px;
+  border-color: whitesmoke;
+}
+
+fieldset:first-of-type {
+  height: 14rem;
+  margin-bottom: 5px;
+}
+
+fieldset:last-of-type {
+  padding-top: 0.75rem;
+}
+
+fieldset p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+/* fieldset p:last-of-type {
+  background-color: lightcyan;
+} */
+
+label {
+  display: block;
+  padding: 0.25em;
+}
+
+label::before {
+  content: '';
+  display: inline-block;
+  width: 0.9em;
+  text-shadow:
+    -1px 0px 0px currentColor,
+    1px 0px 0px currentColor,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black,
+    0px 0px 1px black;
+}
+
+label.richtig::before {
+  content: '✓';
+  color: var(--color-korrekt, limegreen);
+}
+
+label.falsch::before {
+  content: '✗';
+  color: var(--color-inkorrekt, crimson);
+}
+
+label+br {
+  display: none;
+}
+
+input[type="text"] {
+  width: 70%;
+}
+
+input[type="text"]:valid {
+  outline-style: solid;
+  outline-color: white;
+}
+
+input[type="text"]:invalid {
+  outline-style: solid;
+  outline-color: var(--color-inkorrekt);
+}
+
+iframe {
+  /* fürs Debuggen */
+  width: 100%;
+  height: 3rem; /* wegen padding */
+}
