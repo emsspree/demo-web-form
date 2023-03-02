@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<!--
+  -- Drei-Quiz-Fragen
+  -- von Andre Trecksel
+  -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="./img/form.ico">
+  <title>Fragen &amp; Antworten — Mini-Projekt 01</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>Fragen zur Webentwicklung</h1>
+  </header>
+
+  <main>
+    <section>
+
+      <header>
+        <h2>Frage zu <data>HTML</data></h2>
+      </header>
+
+      <div class="forms">
+
+        <form method="POST" action="antworten.php">
+          <!-- target="Antworten-HTML" -->
+          <fieldset>
+            <legend>Frage 1: HTML</legend>
+            <p>Welches HTML-Element wird verwendet, um Benutzereingaben aufzunehmen bzw. weiter zu verarbeiten?</p>
+            <label class=""><input type="radio" name="html" value="a" required>
+              inset</label><br>
+            <label class=""><input type="radio" name="html" value="b" required>
+              insert</label><br>
+            <label class=""><input type="radio" name="html" value="c" required>
+              input</label>
+            <p>&nbsp;</p>
+          </fieldset>
+          <fieldset>
+            <input type="reset">
+            <input type="submit" value="Antwort prüfen">
+            <input type="button" disabled value="Weiter …" title="Weiter zur nächsten Frage." data-next="CSS" data-next-num="2">
+          </fieldset>
+        </form>
+
+        <form method="POST" action="antworten.php">
+          <!--  target="Antworten-CSS" -->
+          <fieldset>
+            <legend>Frage 2: CSS</legend>
+            <p>Welche zwei CSS-Werte können die Farbe von Text beinflussen?</p>
+            <label class=""><input type="checkbox" name="css-a" value="a">
+              currentColor</label><br>
+            <label><input type="checkbox" name="css-b" value="b">
+              stretch</label><br>
+            <label class=""><input type="checkbox" name="css-c" value="c">
+              inherit</label>
+            <p>&nbsp;</p>
+          </fieldset>
+          <fieldset>
+            <input type="reset">
+            <input type="submit" value="Antwort prüfen">
+            <input type="button" disabled value="Weiter …" title="Weiter zur nächsten Frage." data-next="PHP" data-next-num="3">
+          </fieldset>
+        </form>
+
+        <form method="POST" action="antworten.php">
+          <!--  target="Antworten-PHP" -->
+          <fieldset>
+            <legend>Frage 3: PHP</legend>
+            <p>Welche Funktion wird in PHP für die Ausgabe verwendet?<br>(Nur ein Wort, nur Buchstaben und/oder Ziffern)</p>
+            <label class=""><input type="text" name="php" pattern="[A-Za-z0-9]*" ></label><br>
+            <p>&nbsp;</p>
+          </fieldset>
+          <fieldset>
+            <input type="reset">
+            <input type="submit" value="Antwort prüfen">
+            <input type="button" disabled value="Weiter …" title="Weiter zur nächsten Frage." data-next="-" data-next-num="-">
+          </fieldset>
+        </form>
+
+        <p>Fertig.</p>
+      </div>
+
+      <footer>
+        <p>Frage <data>0</data> von 3</p>
+      </footer>
+
+    </section>
+  </main>
+
+  <!-- fürs Debuggen
+  <footer>
+    <iframe name="Antworten-HTML"></iframe>
+    <iframe name="Antworten-CSS"></iframe>
+    <iframe name="Antworten-PHP"></iframe>
+  </footer> -->
+
+</body>
+
+</html>
