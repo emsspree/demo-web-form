@@ -44,6 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   //
 } else {
   //
-  echo '{"korrekt":false}';
+  echo '{"korrekt":false,"error":1}';
   //
 }
