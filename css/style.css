@@ -227,7 +227,7 @@ input[type="text"]:valid {
 
 input[type="text"]:invalid {
   outline-style: solid;
-  outline-color: var(--color-inkorrekt);
+  outline-color: var(--color-inkorrekt, crimson);
 }
 
 iframe {
