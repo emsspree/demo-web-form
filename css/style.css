@@ -3,7 +3,7 @@
  * von Andre Trecksel
  */
 
- *, *::before, *::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
